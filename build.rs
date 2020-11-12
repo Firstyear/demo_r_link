@@ -13,9 +13,9 @@ fn main() {
         .expect("Unable to generate bindings")
         .write_to_file("src/bindings.h");
 
-    let r_inc_path = Path::new("/usr/lib64/R/include");
+    // let r_inc_path = Path::new("/usr/lib64/R/include");
     cc::Build::new()
-        .include(r_inc_path)
+        // .include(r_inc_path)
         .cargo_metadata(true)
         .file("src/wrapper.c")
         .compile("wrapper");
